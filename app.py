@@ -9,7 +9,7 @@ def produto():
 
     sec = str(request.headers.get("X-3scale-proxy-secret-token"))
 
-    # print(sec)
+    print(sec)
 
     if sec != "testesec":
         return jsonify({"message": "codigo errado"})
