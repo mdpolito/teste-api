@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, abort, make_response
+from flask import Flask, jsonify, abort, make_response, request
 import socket
 
 app = Flask(__name__)
@@ -6,6 +6,8 @@ app = Flask(__name__)
 
 @app.route('/produtos', methods=['GET'])
 def produto():
+
+    print(str(request.headers.get("X-3scale-proxy-secret-token")))
 
     try:
 
