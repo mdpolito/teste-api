@@ -7,11 +7,16 @@ app = Flask(__name__)
 @app.route('/produtos', methods=['GET'])
 def produto():
 
-    print(str(request.headers.get("X-3scale-proxy-secret-token")))
+    sec = str(request.headers.get("X-3scale-proxy-secret-token"))
+
+    print(sec)
+
+    if sec != "testesec":
+        return jsonify({"message": "codigo errado"})
 
     try:
 
-        lista = ({"codigo": "000001", "nome": "Gasolina comum"},
+        lista = ({"codigo": "000001", "nome": "Gasolina comum - 1"},
                  {"codigo": "000002", "nome": "Gasolina aditivada"},
                  {"codigo": "000003", "nome": "Etanol"},
                  {"codigo": "000004", "nome": "Oleo diesel"})
