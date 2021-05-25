@@ -37,4 +37,4 @@ def erro500(error):
 hostIP = socket.gethostbyname(socket.gethostname())
 
 # Executa a aplicação
-app.run(host=hostIP, port=5002, debug=False)
+app.run(host=hostIP, port=8080, debug=False)
