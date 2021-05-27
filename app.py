@@ -11,8 +11,8 @@ def produto():
 
     # print(sec)
 
-    if sec != "testesec":
-        return jsonify({"message": "codigo errado"})
+    # if sec != "testesec":
+        # return jsonify({"message": "codigo errado"})
 
     try:
 
